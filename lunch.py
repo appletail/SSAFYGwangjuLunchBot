@@ -67,7 +67,7 @@ class MyClient(discord.Client):
                     lunch_message += '__**{}**__\n {}\n {}\n kcal: {}\n\n'.format(
                         meal['corner'], meal['name'], meal['side'], meal.get('kcal'))
                     if idx == 5:
-                        lunch_message += '\n**이제 이번주와 다음주 점심을 모두 알 수 있습니다.\n<!월> 혹은 <!월월>을 채팅창에 입력해보세요!'
+                        lunch_message += '\n**<!월> 혹은 <!월월>을 채팅창에 입력해보세요!'
 
             if not is_thumbnail_true:
                 await message.channel.send(lunch_message)
@@ -111,7 +111,7 @@ class MyClient(discord.Client):
             now = datetime.today().strftime("%Y/%m/%d %H:%M:%S")
             print(now, '\033[94m' + 'MEW' + '\033[0m' + '      메시지 전송 완료')
 
-        # 개 사진
+        # 강아지 사진
         elif message.content == '!멍멍':
             embed = discord.Embed(color=0x7cbbfe)
             dog_url = requests.get(
@@ -128,8 +128,7 @@ class MyClient(discord.Client):
                 !월   : 이번주 월요일 점심\n
                 !월월 : 다음주 월요일 점심\n
                 !야옹 : 랜덤 고양이 사진\n
-                !멍멍   : 랜던 개 사진\n
-            - 런치봇은 6번 메시지를 보내며 이는 각 메시지 마지막에 사진을 포함시키기 위함입니다.
+                !멍멍   : 랜덤 강아지 사진\n
                 '''
             await message.channel.send(text)
 
